@@ -50,3 +50,17 @@ plt.ylabel('Frequency')
 plt.xlabel('Technologies')
 plt.xticks(rotation=45)
 plt.show()
+
+# Add a new column for number of skills each candidate has
+data['SkillCount'] = data['HaveWorkedWith'].str.split(';').apply(len)
+
+# Describe skill count distribution
+print("\nSkill Count Summary:")
+print(data['SkillCount'].describe())
+
+# Visualize skill count distribution
+data['SkillCount'].plot(kind='hist', bins=15, color='lightgreen', edgecolor='black', figsize=(8, 5))
+plt.title('Distribution of Skill Count')
+plt.ylabel('Frequency')
+plt.xlabel('Number of Skills')
+plt.show()
