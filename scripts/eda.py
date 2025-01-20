@@ -33,3 +33,12 @@ categorical_cols = data.select_dtypes(include=['object']).columns
 for col in categorical_cols:
     print(f"\nUnique values in {col}:")
     print(data[col].unique())
+
+# Split 'HaveWorkedWith' into individual skills
+skills = data['HaveWorkedWith'].str.split(';').explode()
+
+# Count occurences of each tech
+skill_counts = skills.value_counts()
+
+print("Top 10 Most Common Technologies:")
+print(skill_counts.head(10))
