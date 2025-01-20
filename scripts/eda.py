@@ -1,5 +1,8 @@
 # Import libraries
 import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Load dataset
 file_path = "../data/raw/recruitment_data.csv"
@@ -12,6 +15,10 @@ print(data.info())
 # View first few rows
 print("\nSample Data:")
 print(data.head)
+
+# Filling missing values in HaveWorkedWith with 'Unknown' to retain all rows
+# and avoid making assumptions about the missing data.
+data['HaveWorkedWith'].fillna("Unknown", inplace=True)
 
 # Look for missing values
 print("\nMissing Values:")
