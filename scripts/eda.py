@@ -42,3 +42,11 @@ skill_counts = skills.value_counts()
 
 print("Top 10 Most Common Technologies:")
 print(skill_counts.head(10))
+
+# Plot the top ten tech
+skill_counts.head(10).plot(kind='bar', figsize=(10, 6), color='skyblue')
+plt.title('Top 10 Technologies in HaveWorkedWith')
+plt.ylabel('Frequency')
+plt.xlabel('Technologies')
+plt.xticks(rotation=45)
+plt.show()
