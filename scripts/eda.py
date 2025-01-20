@@ -64,3 +64,15 @@ plt.title('Distribution of Skill Count')
 plt.ylabel('Frequency')
 plt.xlabel('Number of Skills')
 plt.show()
+
+# Correlation between SkillCount and PreviousSalary
+correlation = data[['SkillCount', 'PreviousSalary']].corr()
+print("\nCorrelation Between Skill Count and Previous Salary:")
+print(correlation)
+
+# Boxplot: Skill count by employment status
+sns.boxplot(x='Employed', y='SkillCount', data=data)
+plt.title("Skill Count by Employment Status")
+plt.ylabel('Number of Skills')
+plt.xlabel('Employment Status(0 = Unemployed, 1 = Employed)')
+plt.show()
