@@ -92,3 +92,15 @@ plt.ylabel('Employment Rate')
 plt.xlabel('Education Level')
 plt.xticks(rotation=45)
 plt.show()
+
+# Filter out high performers to investigate closer
+high_performers = data[data['EdLevel'].isin(['NoHigherEd', 'Other'])]
+
+# Make a comparison of average skill count
+avg_skills_high_performers = high_performers['SkillCount'].mean()
+avg_skills_higher_ed = data[~data['EdLevel'].isin(['NoHigherEd', 'Other'])]['SkillCount'].mean()
+print("\nAverage number of skills in the 'high performer' category:")
+print(avg_skills_high_performers)
+print("\nAverage number of skills in the 'higher ed' category:")
+print(avg_skills_higher_ed)
+
