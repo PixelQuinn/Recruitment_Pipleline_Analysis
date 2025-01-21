@@ -76,3 +76,19 @@ plt.title("Skill Count by Employment Status")
 plt.ylabel('Number of Skills')
 plt.xlabel('Employment Status(0 = Unemployed, 1 = Employed)')
 plt.show()
+
+# Group by education level and calculate the employment rate
+edlevel_employment = data.groupby('EdLevel')['Employed'].mean()
+
+# Sort the results in descending
+edlevel_employment = edlevel_employment.sort_values(ascending=False)
+
+print(edlevel_employment)
+
+# Plot of employment rate by education level
+edlevel_employment.plot(kind='bar', color='skyblue', figsize=(10, 6))
+plt.title('Employment Rate by Education Level')
+plt.ylabel('Employment Rate')
+plt.xlabel('Education Level')
+plt.xticks(rotation=45)
+plt.show()
