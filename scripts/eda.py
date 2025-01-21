@@ -104,3 +104,9 @@ print(avg_skills_high_performers)
 print("\nAverage number of skills in the 'higher ed' category:")
 print(avg_skills_higher_ed)
 
+high_performer_skills = high_performers['HaveWorkedWith'].str.split(';').explode()
+high_performer_skillcounts = high_performer_skills.value_counts()
+
+# Display the results
+print("\nThe Top 10 Most Common Skills For High Performers Category:")
+print(high_performer_skillcounts.head(10))
