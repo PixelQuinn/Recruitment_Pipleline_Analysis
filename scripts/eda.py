@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load dataset
-file_path = "../data/raw/recruitment_data.csv"
+file_path = "data/raw/recruitment_data.csv"
 data = pd.read_csv(file_path)
 
 # Display basic info
@@ -95,14 +95,16 @@ plt.show()
 
 # Filter out high performers to investigate closer
 high_performers = data[data['EdLevel'].isin(['NoHigherEd', 'Other'])]
+bachelors_skills = data[data['EdLevel'].isin(['Undergraduate'])]
 
 # Make a comparison of average skill count
 avg_skills_high_performers = high_performers['SkillCount'].mean()
+avg_skills_undergrad = bachelors_skills['SkillCount'].mean()
 avg_skills_higher_ed = data[~data['EdLevel'].isin(['NoHigherEd', 'Other'])]['SkillCount'].mean()
 print("\nAverage number of skills in the 'high performer' category:")
 print(avg_skills_high_performers)
-print("\nAverage number of skills in the 'higher ed' category:")
-print(avg_skills_higher_ed)
+print("\nAverage number of skills of undergraduates:")
+print(avg_skills_undergrad)
 
 high_performer_skills = high_performers['HaveWorkedWith'].str.split(';').explode()
 high_performer_skillcounts = high_performer_skills.value_counts()
