@@ -149,3 +149,5 @@ plt.ylabel('Average Skill Count')
 plt.xlabel('Education Level')
 plt.xticks(rotation=45)
 plt.show()
+
+data.to_csv('data/processed/recruitment_data_clean.csv', index=False)
