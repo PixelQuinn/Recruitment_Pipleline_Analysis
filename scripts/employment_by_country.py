@@ -1,8 +1,6 @@
 # Import libraries
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 # Load dataset
 file_path = "data/raw/recruitment_data.csv"
