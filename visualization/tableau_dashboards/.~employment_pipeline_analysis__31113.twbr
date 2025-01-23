@@ -1,0 +1,847 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20242.24.1011.1414                               -->
+<workbook original-version='18.1' source-build='2024.2.4 (20242.24.1011.1414)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='recruitment_data_clean' inline='true' name='federated.0tcfo3a1dka9n81ecy3q40j67eey' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='recruitment_data_clean' name='textscan.1wj1kmp1r82n17114brgv0l7mkkk'>
+            <connection class='textscan' directory='/Users/quinnreams/Documents/GitHub/Recruitment_Pipleline_Analysis/data/processed' filename='recruitment_data_clean.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='Employment_Rate_By_Country' name='textscan.0zg894i1e1lx4v16mqu8o1xvysv3'>
+            <connection class='textscan' directory='/Users/quinnreams/Documents/GitHub/Recruitment_Pipleline_Analysis/data/processed' filename='Employment_Rate_By_Country.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='Salary_By_EdLevel' name='textscan.1924yf712wgkoo1cbug8d1z12ov4'>
+            <connection class='textscan' directory='/Users/quinnreams/Documents/GitHub/Recruitment_Pipleline_Analysis/data/processed' filename='Salary_By_EdLevel.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1wj1kmp1r82n17114brgv0l7mkkk' name='recruitment_data_clean.csv' table='[recruitment_data_clean#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='Unnamed: 0' ordinal='0' />
+            <column datatype='string' name='Age' ordinal='1' />
+            <column datatype='string' name='Accessibility' ordinal='2' />
+            <column datatype='string' name='EdLevel' ordinal='3' />
+            <column datatype='integer' name='Employment' ordinal='4' />
+            <column datatype='string' name='Gender' ordinal='5' />
+            <column datatype='string' name='MentalHealth' ordinal='6' />
+            <column datatype='string' name='MainBranch' ordinal='7' />
+            <column datatype='integer' name='YearsCode' ordinal='8' />
+            <column datatype='integer' name='YearsCodePro' ordinal='9' />
+            <column datatype='string' name='Country' ordinal='10' />
+            <column datatype='real' name='PreviousSalary' ordinal='11' />
+            <column datatype='string' name='HaveWorkedWith' ordinal='12' />
+            <column datatype='integer' name='ComputerSkills' ordinal='13' />
+            <column datatype='integer' name='Employed' ordinal='14' />
+            <column datatype='integer' name='SkillCount' ordinal='15' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.1wj1kmp1r82n17114brgv0l7mkkk' name='recruitment_data_clean.csv' table='[recruitment_data_clean#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='Unnamed: 0' ordinal='0' />
+            <column datatype='string' name='Age' ordinal='1' />
+            <column datatype='string' name='Accessibility' ordinal='2' />
+            <column datatype='string' name='EdLevel' ordinal='3' />
+            <column datatype='integer' name='Employment' ordinal='4' />
+            <column datatype='string' name='Gender' ordinal='5' />
+            <column datatype='string' name='MentalHealth' ordinal='6' />
+            <column datatype='string' name='MainBranch' ordinal='7' />
+            <column datatype='integer' name='YearsCode' ordinal='8' />
+            <column datatype='integer' name='YearsCodePro' ordinal='9' />
+            <column datatype='string' name='Country' ordinal='10' />
+            <column datatype='real' name='PreviousSalary' ordinal='11' />
+            <column datatype='string' name='HaveWorkedWith' ordinal='12' />
+            <column datatype='integer' name='ComputerSkills' ordinal='13' />
+            <column datatype='integer' name='Employed' ordinal='14' />
+            <column datatype='integer' name='SkillCount' ordinal='15' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[recruitment_data_clean.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Unnamed: 0</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Unnamed: 0]</local-name>
+            <parent-name>[recruitment_data_clean.csv]</parent-name>
+            <remote-alias>Unnamed: 0</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[recruitment_data_clean.csv_613E50FE777E418BB284029403ACF385]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Age</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Age]</local-name>
+            <parent-name>[recruitment_data_clean.csv]</parent-name>
+            <remote-alias>Age</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[recruitment_data_clean.csv_613E50FE777E418BB284029403ACF385]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Accessibility</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Accessibility]</local-name>
+            <parent-name>[recruitment_data_clean.csv]</parent-name>
+            <remote-alias>Accessibility</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[recruitment_data_clean.csv_613E50FE777E418BB284029403ACF385]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>EdLevel</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[EdLevel]</local-name>
+            <parent-name>[recruitment_data_clean.csv]</parent-name>
+            <remote-alias>EdLevel</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[recruitment_data_clean.csv_613E50FE777E418BB284029403ACF385]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Employment</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Employment]</local-name>
+            <parent-name>[recruitment_data_clean.csv]</parent-name>
+            <remote-alias>Employment</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[recruitment_data_clean.csv_613E50FE777E418BB284029403ACF385]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Gender</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Gender]</local-name>
+            <parent-name>[recruitment_data_clean.csv]</parent-name>
+            <remote-alias>Gender</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[recruitment_data_clean.csv_613E50FE777E418BB284029403ACF385]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MentalHealth</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MentalHealth]</local-name>
+            <parent-name>[recruitment_data_clean.csv]</parent-name>
+            <remote-alias>MentalHealth</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[recruitment_data_clean.csv_613E50FE777E418BB284029403ACF385]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MainBranch</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MainBranch]</local-name>
+            <parent-name>[recruitment_data_clean.csv]</parent-name>
+            <remote-alias>MainBranch</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[recruitment_data_clean.csv_613E50FE777E418BB284029403ACF385]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>YearsCode</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[YearsCode]</local-name>
+            <parent-name>[recruitment_data_clean.csv]</parent-name>
+            <remote-alias>YearsCode</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[recruitment_data_clean.csv_613E50FE777E418BB284029403ACF385]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>YearsCodePro</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[YearsCodePro]</local-name>
+            <parent-name>[recruitment_data_clean.csv]</parent-name>
+            <remote-alias>YearsCodePro</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[recruitment_data_clean.csv_613E50FE777E418BB284029403ACF385]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Country]</local-name>
+            <parent-name>[recruitment_data_clean.csv]</parent-name>
+            <remote-alias>Country</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[recruitment_data_clean.csv_613E50FE777E418BB284029403ACF385]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PreviousSalary</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[PreviousSalary]</local-name>
+            <parent-name>[recruitment_data_clean.csv]</parent-name>
+            <remote-alias>PreviousSalary</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[recruitment_data_clean.csv_613E50FE777E418BB284029403ACF385]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HaveWorkedWith</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[HaveWorkedWith]</local-name>
+            <parent-name>[recruitment_data_clean.csv]</parent-name>
+            <remote-alias>HaveWorkedWith</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[recruitment_data_clean.csv_613E50FE777E418BB284029403ACF385]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ComputerSkills</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ComputerSkills]</local-name>
+            <parent-name>[recruitment_data_clean.csv]</parent-name>
+            <remote-alias>ComputerSkills</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[recruitment_data_clean.csv_613E50FE777E418BB284029403ACF385]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Employed</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Employed]</local-name>
+            <parent-name>[recruitment_data_clean.csv]</parent-name>
+            <remote-alias>Employed</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[recruitment_data_clean.csv_613E50FE777E418BB284029403ACF385]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SkillCount</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[SkillCount]</local-name>
+            <parent-name>[recruitment_data_clean.csv]</parent-name>
+            <remote-alias>SkillCount</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[recruitment_data_clean.csv_613E50FE777E418BB284029403ACF385]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Computer Skills' datatype='integer' name='[ComputerSkills]' role='measure' type='quantitative' />
+      <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Education Level' datatype='string' name='[EdLevel]' role='dimension' type='nominal'>
+        <aliases>
+          <alias key='&quot;NoHigherEd&quot;' value='No Higher Education' />
+          <alias key='&quot;Other&quot;' value='Some Higher Education' />
+        </aliases>
+      </column>
+      <column caption='Have Worked With' datatype='string' name='[HaveWorkedWith]' role='dimension' type='nominal' />
+      <column caption='Main Branch' datatype='string' name='[MainBranch]' role='dimension' type='nominal' />
+      <column caption='Mental Health' datatype='string' name='[MentalHealth]' role='dimension' type='nominal' />
+      <column caption='Previous Salary' datatype='real' name='[PreviousSalary]' role='measure' type='quantitative' />
+      <column caption='Skill Count' datatype='integer' name='[SkillCount]' role='measure' type='quantitative' />
+      <column caption='Years Code Pro' datatype='integer' name='[YearsCodePro]' role='measure' type='quantitative' />
+      <column caption='Years Code' datatype='integer' name='[YearsCode]' role='dimension' type='ordinal' />
+      <_.fcp.ObjectModelTableType.true...column caption='recruitment_data_clean.csv' datatype='table' name='[__tableau_internal_object_id__].[recruitment_data_clean.csv_613E50FE777E418BB284029403ACF385]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='recruitment_data_clean.csv' id='recruitment_data_clean.csv_613E50FE777E418BB284029403ACF385'>
+            <properties context=''>
+              <relation connection='textscan.1wj1kmp1r82n17114brgv0l7mkkk' name='recruitment_data_clean.csv' table='[recruitment_data_clean#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='Unnamed: 0' ordinal='0' />
+                  <column datatype='string' name='Age' ordinal='1' />
+                  <column datatype='string' name='Accessibility' ordinal='2' />
+                  <column datatype='string' name='EdLevel' ordinal='3' />
+                  <column datatype='integer' name='Employment' ordinal='4' />
+                  <column datatype='string' name='Gender' ordinal='5' />
+                  <column datatype='string' name='MentalHealth' ordinal='6' />
+                  <column datatype='string' name='MainBranch' ordinal='7' />
+                  <column datatype='integer' name='YearsCode' ordinal='8' />
+                  <column datatype='integer' name='YearsCodePro' ordinal='9' />
+                  <column datatype='string' name='Country' ordinal='10' />
+                  <column datatype='real' name='PreviousSalary' ordinal='11' />
+                  <column datatype='string' name='HaveWorkedWith' ordinal='12' />
+                  <column datatype='integer' name='ComputerSkills' ordinal='13' />
+                  <column datatype='integer' name='Employed' ordinal='14' />
+                  <column datatype='integer' name='SkillCount' ordinal='15' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Employment Rate by Education Level'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#000000'>Employment Rate by Education Level</run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#000000' fontsize='11'>How Education Level Affects Employment Rates in the Recruitment Dataset.</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='recruitment_data_clean' name='federated.0tcfo3a1dka9n81ecy3q40j67eey' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tcfo3a1dka9n81ecy3q40j67eey'>
+            <column caption='Education Level' datatype='string' name='[EdLevel]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;NoHigherEd&quot;' value='No Higher Education' />
+                <alias key='&quot;Other&quot;' value='Some Higher Education' />
+              </aliases>
+            </column>
+            <column datatype='integer' name='[Employed]' role='measure' type='quantitative' />
+            <column-instance column='[Employed]' derivation='Avg' name='[avg:Employed:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[EdLevel]' derivation='None' name='[none:EdLevel:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[none:EdLevel:nk]' direction='ASC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]' shelf='rows' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]' scope='cols' value='Employment Rate' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]' value='p0.0%' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height-header' value='36' />
+            <format attr='width' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[none:EdLevel:nk]' value='176' />
+          </style-rule>
+          <style-rule element='field-labels'>
+            <format attr='font-size' value='14' />
+          </style-rule>
+          <style-rule element='field-labels-decoration'>
+            <format attr='font-style' value='normal' />
+            <format attr='font-weight' value='normal' />
+            <format attr='text-orientation' value='0' />
+          </style-rule>
+          <style-rule element='field-labels-spanner'>
+            <format attr='font-size' scope='cols' value='10' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]' value='p0%' />
+            <format attr='font-size' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]' value='10' />
+          </style-rule>
+          <style-rule element='axis-title'>
+            <format attr='font-size' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]' value='14' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-color' value='#a0cbe8' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0tcfo3a1dka9n81ecy3q40j67eey].[none:EdLevel:nk]</rows>
+        <cols>[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]</cols>
+      </table>
+      <simple-id uuid='{CDDC84FB-A234-4EC0-B797-A67F32C3CE9C}' />
+    </worksheet>
+    <worksheet name='Salary by Education Level'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Average Salary by Education Level
+</run>
+            <run fontcolor='#000000' fontsize='11'>Higher education generally correlates with increased earnings.</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='recruitment_data_clean' name='federated.0tcfo3a1dka9n81ecy3q40j67eey' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tcfo3a1dka9n81ecy3q40j67eey'>
+            <column caption='Education Level' datatype='string' name='[EdLevel]' role='dimension' type='nominal'>
+              <aliases>
+                <alias key='&quot;NoHigherEd&quot;' value='No Higher Education' />
+                <alias key='&quot;Other&quot;' value='Some Higher Education' />
+              </aliases>
+            </column>
+            <column caption='Previous Salary' datatype='real' name='[PreviousSalary]' role='measure' type='quantitative' />
+            <column-instance column='[PreviousSalary]' derivation='Avg' name='[avg:PreviousSalary:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[EdLevel]' derivation='None' name='[none:EdLevel:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[none:EdLevel:nk]' direction='ASC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:PreviousSalary:qk]' shelf='columns' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:PreviousSalary:qk]' scope='rows' value='Average Salary per Year' />
+            <format attr='height' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[none:EdLevel:nk]' value='146' />
+            <encoding attr='space' class='0' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:PreviousSalary:qk]' field-type='quantitative' major-origin='0.0' major-spacing='10000.0' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[none:EdLevel:nk]' value='53' />
+            <format attr='text-format' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:PreviousSalary:qk]' value='C1033%' />
+          </style-rule>
+          <style-rule element='field-labels'>
+            <format attr='font-size' value='14' />
+            <format attr='font-weight' value='bold' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-size' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[none:EdLevel:nk]' value='14' />
+            <format attr='text-orientation' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[none:EdLevel:nk]' value='-90' />
+          </style-rule>
+          <style-rule element='axis-title'>
+            <format attr='font-size' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:PreviousSalary:qk]' value='14' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:PreviousSalary:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-color' value='#75a1c7' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:PreviousSalary:qk]</rows>
+        <cols>[federated.0tcfo3a1dka9n81ecy3q40j67eey].[none:EdLevel:nk]</cols>
+      </table>
+      <simple-id uuid='{6B75F6BB-9F5F-4BF4-9BC6-3A9ABAED310D}' />
+    </worksheet>
+    <worksheet name='Top 10 Countries by Average Employment Rate'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Top 10 Countries by Average Employment Rate
+</run>
+            <run fontcolor='#000000' fontsize='11'>Countries with the Highest Average Employment Rates Based on Candidate Data.</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='recruitment_data_clean' name='federated.0tcfo3a1dka9n81ecy3q40j67eey' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tcfo3a1dka9n81ecy3q40j67eey'>
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='integer' name='[Employed]' role='measure' type='quantitative' />
+            <column-instance column='[Employed]' derivation='Avg' name='[avg:Employed:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[none:Country:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Country:nk]' />
+              <groupfilter function='union'>
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Afghanistan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Albania&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Algeria&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Andorra&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Angola&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Argentina&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Armenia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Australia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Austria&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Azerbaijan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Bahrain&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Bangladesh&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Barbados&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Belarus&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Belgium&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Belize&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Benin&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Bhutan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Bolivia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Bosnia and Herzegovina&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Botswana&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Bulgaria&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Burkina Faso&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Burundi&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Cambodia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Cameroon&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Cape Verde&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Chile&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;China&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Colombia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Congo, Republic of the...&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Costa Rica&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Côte d&apos;Ivoire&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Croatia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Cuba&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Cyprus&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Czech Republic&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Democratic Republic of the Congo&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Denmark&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Djibouti&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Dominica&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Dominican Republic&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Ecuador&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Egypt&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;El Salvador&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Estonia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Ethiopia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Fiji&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Finland&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Gambia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Georgia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Ghana&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Greece&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Guatemala&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Guinea&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Guyana&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Haiti&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Honduras&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Hong Kong (S.A.R.)&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Hungary&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Iceland&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Indonesia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Iran, Islamic Republic of...&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Iraq&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Ireland&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Isle of Man&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Israel&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Jamaica&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Japan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Jordan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Kazakhstan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Kenya&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Kosovo&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Kuwait&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Kyrgyzstan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Lao People&apos;s Democratic Republic&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Latvia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Lebanon&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Lesotho&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Liberia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Libyan Arab Jamahiriya&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Lithuania&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Luxembourg&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Madagascar&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Malawi&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Malaysia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Maldives&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Mali&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Malta&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Mauritania&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Mauritius&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Mexico&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Monaco&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Mongolia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Montenegro&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Morocco&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Mozambique&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Myanmar&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Namibia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Nepal&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;New Zealand&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Nicaragua&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Niger&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Nigeria&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Nomadic&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Norway&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Oman&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Pakistan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Palestine&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Panama&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Paraguay&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Peru&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Philippines&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Portugal&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Qatar&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Republic of Korea&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Republic of Moldova&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Romania&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Russian Federation&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Rwanda&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Saint Kitts and Nevis&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Saint Lucia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Saint Vincent and the Grenadines&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Saudi Arabia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Senegal&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Serbia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Seychelles&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Singapore&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Slovakia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Slovenia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Somalia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;South Africa&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;South Korea&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Spain&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Sri Lanka&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Sudan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Suriname&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Swaziland&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Sweden&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Switzerland&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Syrian Arab Republic&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Taiwan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Tajikistan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Thailand&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;The former Yugoslav Republic of Macedonia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Timor-Leste&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Togo&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Trinidad and Tobago&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Tunisia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Turkey&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Turkmenistan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Uganda&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Ukraine&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;United Arab Emirates&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;United Republic of Tanzania&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Uruguay&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Uzbekistan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Venezuela, Bolivarian Republic of...&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Viet Nam&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Yemen&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Zambia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Zimbabwe&quot;' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[none:Country:nk]' direction='ASC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0tcfo3a1dka9n81ecy3q40j67eey].[none:Country:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]' scope='cols' value='Employment Rate by Average' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]' value='p0.0%' />
+          </style-rule>
+          <style-rule element='field-labels'>
+            <format attr='font-size' value='14' />
+            <format attr='font-weight' value='bold' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]' value='p0%' />
+            <format attr='font-size' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]' value='10' />
+          </style-rule>
+          <style-rule element='axis-title'>
+            <format attr='font-size' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]' value='14' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-color' value='#fabfd2' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0tcfo3a1dka9n81ecy3q40j67eey].[none:Country:nk]</rows>
+        <cols>[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]</cols>
+      </table>
+      <simple-id uuid='{FEB35B2B-D26B-4F60-A65E-7EF600F33DCE}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' name='Employment Rate by Education Level'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8E1921B3-20F2-4838-AB08-AB9589D9D49B}' />
+    </window>
+    <window class='worksheet' name='Top 10 Countries by Average Employment Rate'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{269D203D-85ED-45FB-BE66-45F79BE00CCD}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Salary by Education Level'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{13270D88-4651-4F13-8219-B4A627BC73B4}' />
+    </window>
+  </windows>
+</workbook>
