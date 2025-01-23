@@ -29,6 +29,9 @@
           <named-connection caption='recruitment_data_clean' name='textscan.1wj1kmp1r82n17114brgv0l7mkkk'>
             <connection class='textscan' directory='/Users/quinnreams/Documents/GitHub/Recruitment_Pipleline_Analysis/data/processed' filename='recruitment_data_clean.csv' password='' server='' />
           </named-connection>
+          <named-connection caption='Employment_Rate_By_Country' name='textscan.0zg894i1e1lx4v16mqu8o1xvysv3'>
+            <connection class='textscan' directory='/Users/quinnreams/Documents/GitHub/Recruitment_Pipleline_Analysis/data/processed' filename='Employment_Rate_By_Country.csv' password='' server='' />
+          </named-connection>
         </named-connections>
         <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1wj1kmp1r82n17114brgv0l7mkkk' name='recruitment_data_clean.csv' table='[recruitment_data_clean#csv]' type='table'>
           <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
@@ -446,9 +449,240 @@
       </table>
       <simple-id uuid='{CDDC84FB-A234-4EC0-B797-A67F32C3CE9C}' />
     </worksheet>
+    <worksheet name='Top 10 Countries by Average Employment Rate'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='recruitment_data_clean' name='federated.0tcfo3a1dka9n81ecy3q40j67eey' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0tcfo3a1dka9n81ecy3q40j67eey'>
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='integer' name='[Employed]' role='measure' type='quantitative' />
+            <column-instance column='[Employed]' derivation='Avg' name='[avg:Employed:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[none:Country:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Country:nk]' />
+              <groupfilter function='union'>
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Afghanistan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Albania&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Algeria&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Andorra&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Angola&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Argentina&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Armenia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Australia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Austria&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Azerbaijan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Bahrain&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Bangladesh&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Barbados&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Belarus&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Belgium&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Belize&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Benin&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Bhutan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Bolivia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Bosnia and Herzegovina&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Botswana&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Bulgaria&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Burkina Faso&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Burundi&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Cambodia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Cameroon&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Cape Verde&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Chile&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;China&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Colombia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Congo, Republic of the...&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Costa Rica&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Côte d&apos;Ivoire&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Croatia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Cuba&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Cyprus&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Czech Republic&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Democratic Republic of the Congo&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Denmark&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Djibouti&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Dominica&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Dominican Republic&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Ecuador&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Egypt&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;El Salvador&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Estonia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Ethiopia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Fiji&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Finland&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Gambia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Georgia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Ghana&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Greece&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Guatemala&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Guinea&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Guyana&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Haiti&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Honduras&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Hong Kong (S.A.R.)&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Hungary&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Iceland&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Indonesia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Iran, Islamic Republic of...&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Iraq&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Ireland&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Isle of Man&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Israel&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Jamaica&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Japan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Jordan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Kazakhstan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Kenya&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Kosovo&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Kuwait&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Kyrgyzstan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Lao People&apos;s Democratic Republic&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Latvia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Lebanon&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Lesotho&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Liberia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Libyan Arab Jamahiriya&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Lithuania&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Luxembourg&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Madagascar&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Malawi&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Malaysia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Maldives&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Mali&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Malta&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Mauritania&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Mauritius&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Mexico&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Monaco&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Mongolia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Montenegro&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Morocco&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Mozambique&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Myanmar&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Namibia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Nepal&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;New Zealand&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Nicaragua&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Niger&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Nigeria&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Nomadic&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Norway&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Oman&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Pakistan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Palestine&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Panama&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Paraguay&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Peru&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Philippines&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Portugal&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Qatar&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Republic of Korea&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Republic of Moldova&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Romania&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Russian Federation&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Rwanda&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Saint Kitts and Nevis&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Saint Lucia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Saint Vincent and the Grenadines&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Saudi Arabia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Senegal&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Serbia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Seychelles&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Singapore&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Slovakia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Slovenia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Somalia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;South Africa&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;South Korea&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Spain&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Sri Lanka&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Sudan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Suriname&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Swaziland&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Sweden&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Switzerland&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Syrian Arab Republic&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Taiwan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Tajikistan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Thailand&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;The former Yugoslav Republic of Macedonia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Timor-Leste&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Togo&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Trinidad and Tobago&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Tunisia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Turkey&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Turkmenistan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Uganda&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Ukraine&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;United Arab Emirates&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;United Republic of Tanzania&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Uruguay&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Uzbekistan&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Venezuela, Bolivarian Republic of...&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Viet Nam&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Yemen&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Zambia&quot;' />
+                <groupfilter function='member' level='[none:Country:nk]' member='&quot;Zimbabwe&quot;' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[none:Country:nk]' direction='ASC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0tcfo3a1dka9n81ecy3q40j67eey].[none:Country:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]' scope='cols' value='Employment Rate by Average' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]' value='p0.0%' />
+          </style-rule>
+          <style-rule element='field-labels'>
+            <format attr='font-size' value='14' />
+            <format attr='font-weight' value='bold' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]' value='p0%' />
+            <format attr='font-size' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]' value='10' />
+          </style-rule>
+          <style-rule element='axis-title'>
+            <format attr='font-size' field='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]' value='14' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-color' value='#fabfd2' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0tcfo3a1dka9n81ecy3q40j67eey].[none:Country:nk]</rows>
+        <cols>[federated.0tcfo3a1dka9n81ecy3q40j67eey].[avg:Employed:qk]</cols>
+      </table>
+      <simple-id uuid='{FEB35B2B-D26B-4F60-A65E-7EF600F33DCE}' />
+    </worksheet>
   </worksheets>
   <windows source-height='30'>
-    <window class='worksheet' maximized='true' name='Employment Rate by Education Level'>
+    <window class='worksheet' name='Employment Rate by Education Level'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -477,6 +711,36 @@
         </highlight>
       </viewpoint>
       <simple-id uuid='{8E1921B3-20F2-4838-AB08-AB9589D9D49B}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Top 10 Countries by Average Employment Rate'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0tcfo3a1dka9n81ecy3q40j67eey].[none:Country:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{269D203D-85ED-45FB-BE66-45F79BE00CCD}' />
     </window>
   </windows>
   <thumbnails>
@@ -647,6 +911,191 @@
       0TRSABJNIwUg0TRSABJNIwUg0TRSABJNIwUg0TRSABJNIwUg0TRSABJNIwUg0TRSABJNIwUg
       0TRSABJNIwUg0TRSABJNIwUg0TRSABJNIwUg0TRSABJNIwUg0TRSABJN8/9Cn3OcwStfywAA
       AABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='Top 10 Countries by Average Employment Rate' width='192'>
+      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
+      /kKK8lTDFUoAAAAASUVORK5CYII=
     </thumbnail>
   </thumbnails>
 </workbook>
