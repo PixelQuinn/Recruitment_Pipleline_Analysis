@@ -138,3 +138,14 @@ for skill in ['Python', 'AWS', 'JavaScript', 'Docker', 'HTML/CSS', 'SQL']:
     skill_users = data[data['HaveWorkedWith'].str.contains(skill, na=False)]
     avg_salary = skill_users['PreviousSalary'].mean()
     print(f"Average salary for {skill} users: {avg_salary:.2f}")
+
+# Visualize skills per education level
+edlevel_skills = data.groupby('EdLevel')['SkillCount'].mean()
+edlevel_skills = edlevel_skills.sort_values(ascending=False)
+
+edlevel_skills.plot(kind='bar', color='lightcoral', figsize=(10, 6))
+plt.title('Average Number of Skills by Education Level')
+plt.ylabel('Average Skill Count')
+plt.xlabel('Education Level')
+plt.xticks(rotation=45)
+plt.show()
