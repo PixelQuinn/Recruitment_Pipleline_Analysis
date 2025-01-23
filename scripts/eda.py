@@ -95,15 +95,16 @@ plt.show()
 
 # Filter out high performers to investigate closer
 high_performers = data[data['EdLevel'].isin(['NoHigherEd', 'Other'])]
-bachelors_skills = data[data['EdLevel'].isin(['Undergraduate'])]
-masters_skills = data[data['EdLevel'].isin(['Master'])]
-phd_skills = data[data['EdLevel'].isin(['PhD'])]
+undergraduate_students = data[data['EdLevel'].isin(['Undergraduate'])]
+master_students = data[data['EdLevel'].isin(['Master'])]
+phd_students = data[data['EdLevel'].isin(['PhD'])]
 
 # Make a comparison of average skill count
 avg_skills_high_performers = high_performers['SkillCount'].mean()
-avg_skills_undergrad = bachelors_skills['SkillCount'].mean()
-avg_skills_master = masters_skills['SkillCount'].mean()
-avg_skills_phd = phd_skills['SkillCount'].mean()
+avg_skills_undergrad = undergraduate_students['SkillCount'].mean()
+avg_skills_master = master_students['SkillCount'].mean()
+avg_skills_phd = phd_students['SkillCount'].mean()
+
 print("\nAverage number of skills in the 'high performer' category:")
 print(avg_skills_high_performers)
 print("\nAverage number of skills of Undergraduate Students:")
@@ -115,7 +116,25 @@ print(avg_skills_phd)
 
 high_performer_skills = high_performers['HaveWorkedWith'].str.split(';').explode()
 high_performer_skillcounts = high_performer_skills.value_counts()
+undergrad_skills = undergraduate_students['HaveWorkedWith'].str.split(';').explode()
+undergrad_skillcounts = undergrad_skills.value_counts()
+master_skills = master_students['HaveWorkedWith'].str.split(';').explode()
+master_skillcounts = master_skills.value_counts()
+phd_skills = phd_students['HaveWorkedWith'].str.split(';').explode()
+phd_skillcounts = phd_skills.value_counts()
 
 # Display the results
-print("\nThe Top 10 Most Common Skills For High Performers Category:")
+print("\nThe Top 10 Most Common Skills For No Higher Education:")
 print(high_performer_skillcounts.head(10))
+print("\nThe Top 10 Most Common Skills For Undergraduate Students:")
+print(undergrad_skillcounts.head(10))
+print("\nThe Top 10 Most Common Skills For Master Students:")
+print(master_skillcounts.head(10))
+print("\nThe Top 10 Most Common Skills For PhD Students:")
+print(phd_skillcounts.head(10))
+
+# Funct to handle multiple skills as needed to analyze
+for skill in ['Python', 'AWS', 'JavaScript', 'Docker', 'HTML/CSS', 'SQL']:
+    skill_users = data[data['HaveWorkedWith'].str.contains(skill, na=False)]
+    avg_salary = skill_users['PreviousSalary'].mean()
+    print(f"Average salary for {skill} users: {avg_salary:.2f}")
