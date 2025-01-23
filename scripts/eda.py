@@ -96,15 +96,22 @@ plt.show()
 # Filter out high performers to investigate closer
 high_performers = data[data['EdLevel'].isin(['NoHigherEd', 'Other'])]
 bachelors_skills = data[data['EdLevel'].isin(['Undergraduate'])]
+masters_skills = data[data['EdLevel'].isin(['Master'])]
+phd_skills = data[data['EdLevel'].isin(['PhD'])]
 
 # Make a comparison of average skill count
 avg_skills_high_performers = high_performers['SkillCount'].mean()
 avg_skills_undergrad = bachelors_skills['SkillCount'].mean()
-avg_skills_higher_ed = data[~data['EdLevel'].isin(['NoHigherEd', 'Other'])]['SkillCount'].mean()
+avg_skills_master = masters_skills['SkillCount'].mean()
+avg_skills_phd = phd_skills['SkillCount'].mean()
 print("\nAverage number of skills in the 'high performer' category:")
 print(avg_skills_high_performers)
-print("\nAverage number of skills of undergraduates:")
+print("\nAverage number of skills of Undergraduate Students:")
 print(avg_skills_undergrad)
+print("\nAverage number of skills of Master Students:")
+print(avg_skills_master)
+print("\nAverage number of skills of PhD Students:")
+print(avg_skills_phd)
 
 high_performer_skills = high_performers['HaveWorkedWith'].str.split(';').explode()
 high_performer_skillcounts = high_performer_skills.value_counts()
