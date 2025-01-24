@@ -7,7 +7,6 @@ This project provides a comprehensive analysis of recruitment trends using vario
 2. [Data Analysis Process](#data-analysis-process)
 3. [Key Findings](#key-findings)
 4. [Visualizations](#visualizations)
-5. [Next Steps](#next-steps)
 
 ---
 
