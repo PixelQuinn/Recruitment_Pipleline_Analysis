@@ -18,7 +18,7 @@
     <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
     <WindowsPersistSimpleIdentifiers />
   </document-format-change-manifest>
-  <repository-location id='Salary_by_Ed_Level' path='/workbooks' revision='1.0' />
+  <repository-location id='Recruitment_Analysis_Pipeline' path='/workbooks' revision='1.0' />
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
     <preference name='ui.shelf.height' value='26' />
@@ -1162,8 +1162,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='1250' minheight='1250' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='20' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98000' id='19' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='100000' id='22' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='21' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
                 <zone forceUpdate='true' h='5625' id='12' type-v2='text' w='98400' x='800' y='1000'>
                   <formatted-text>
                     <run bold='true' fontsize='20'>Recruitment Analysis Pipeline</run>
@@ -1273,7 +1273,7 @@
       </cards>
       <simple-id uuid='{269D203D-85ED-45FB-BE66-45F79BE00CCD}' />
     </window>
-    <window class='worksheet' name='Salary by Education Level'>
+    <window class='worksheet' maximized='true' name='Salary by Education Level'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1324,7 +1324,7 @@
       </cards>
       <simple-id uuid='{966CB1F6-E206-4C77-9E8A-C5615EEDB1EF}' />
     </window>
-    <window class='dashboard' maximized='true' name='Recruitment Pipeline Analysis'>
+    <window class='dashboard' name='Recruitment Pipeline Analysis'>
       <viewpoints>
         <viewpoint name='Average Salary by Gender'>
           <zoom type='entire-view' />
