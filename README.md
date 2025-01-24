@@ -1,4 +1,4 @@
-# Recruitment Pipeline Analysis
+# Workforce Analytics and Recruitment Trends
 
 This project provides a comprehensive analysis of recruitment trends using various datasets. By leveraging Python for data cleaning and exploratory data analysis, and Tableau for visualizations, this project highlights key findings regarding education, employment, and salary trends. The insights are intended to assist HR teams and stakeholders in optimizing recruitment strategies.
 
